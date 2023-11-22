@@ -16,6 +16,7 @@ custom_optimizer = Adam(learning_rate=0.001)
 # Memuat model dengan menyertakan custom_objects
 model = load_model("model/sentiment_model.h5", custom_objects={'Adam': custom_optimizer})
 
+
 # Load Tokenizer
 with open("model/sentiment_tokenizer.pkl", "rb") as tokenizer_file:
     tokenizer = pickle.load(tokenizer_file)
