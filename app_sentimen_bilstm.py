@@ -11,10 +11,10 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 import subprocess
 
 # Load model
-model = load_model("model/sentiment_model.h5")
+model = load_model("sentiment_model.h5")
 
 # Load Tokenizer
-with open("model/sentiment_tokenizer.pkl", "rb") as tokenizer_file:
+with open("sentiment_tokenizer.pkl", "rb") as tokenizer_file:
     tokenizer = pickle.load(tokenizer_file)
 
 # Fungsi Preprocessing
