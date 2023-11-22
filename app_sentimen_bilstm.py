@@ -11,9 +11,7 @@ from nltk.corpus import stopwords
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 import subprocess
 
-# Mendefinisikan fungsi untuk optimizer
-def custom_optimizer():
-    return Adam(learning_rate=0.001)  
+custom_optimizer = Adam(learning_rate=0.001)
 
 # Memuat model dengan menyertakan custom_objects
 model = load_model("model/sentiment_model.h5", custom_objects={'Adam': custom_optimizer})
