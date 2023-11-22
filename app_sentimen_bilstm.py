@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
+from tensorflow.keras.optimizers import Adam
 import pickle
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import re
@@ -10,8 +11,8 @@ from nltk.corpus import stopwords
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 import subprocess
 
-# Load model
-model = load_model("model/sentiment_model.h5")
+# Load model dengan menyertakan custom_objects untuk custom optimizer
+model = load_model("model/sentiment_model.h5", custom_objects={'Custom>Adam': Adam})
 
 # Load Tokenizer
 with open("model/sentiment_tokenizer.pkl", "rb") as tokenizer_file:
