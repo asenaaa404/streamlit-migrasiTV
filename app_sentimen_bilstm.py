@@ -11,8 +11,7 @@ from nltk.corpus import stopwords
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 import subprocess
 
-# Load model dengan menyertakan custom_objects untuk custom optimizer
-model = load_model("model/sentiment_model.h5", custom_objects={'Custom>Adam': Adam})
+model = load_model("model/sentiment_model.h5")
 
 # Load Tokenizer
 with open("model/sentiment_tokenizer.pkl", "rb") as tokenizer_file:
