@@ -13,7 +13,7 @@ import subprocess
 
 # Memuat model 
 adam = Adam(learning_rate=0.001)
-model = load_model("model/sentiment_model.h5", optimizer=adam)
+model = load_model("model/sentiment_model.h5", optimizers=adam)
 
 # Load Tokenizer
 with open("model/sentiment_tokenizer.pkl", "rb") as tokenizer_file:
