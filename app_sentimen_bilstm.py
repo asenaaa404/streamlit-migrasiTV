@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
-from tensorflow.keras.optimizers import Adam
 import pickle
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import re
@@ -12,11 +11,10 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 import subprocess
 
 # Memuat model 
-adam = Adam(learning_rate=0.001)
-model = load_model("model/sentiment_model.h5", optimizers=adam)
+model = load_model("sentiment_model.h5")
 
 # Load Tokenizer
-with open("model/sentiment_tokenizer.pkl", "rb") as tokenizer_file:
+with open("sentiment_tokenizer.pkl", "rb") as tokenizer_file:
     tokenizer = pickle.load(tokenizer_file)
 
 # Fungsi Preprocessing
