@@ -12,8 +12,8 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 import subprocess
 
 # Memuat model 
-optimizer = Adam(learning_rate=0.001)
-model = load_model("model/sentiment_model.h5", custom_objects={'Adam': optimizer})
+adam = Adam(learning_rate=0.001)
+model = load_model("model/sentiment_model.h5", optimizer=adam)
 
 # Load Tokenizer
 with open("model/sentiment_tokenizer.pkl", "rb") as tokenizer_file:
